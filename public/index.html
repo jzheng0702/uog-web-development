@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SVG Image Viewier</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CHANGE ME">
+  <meta name="keywords" content="CHANGE ME">
+  <meta name="author" content="Jingjing Zheng">
+  <!-- Load jquery, bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" type="text/css" href="style.css"></link>
+  <!-- Custom CSS End -->
+</head>
+<body>
+
+  <div>
+    <table id = "myTable">
+      <thead>
+        <tr style = "display: block">
+          <th width = "203">Image (click to download)</th>
+          <th width = "139">File name (click to download)</th>
+          <th width = "100">File size</th>
+          <th width = "100">Number of rectangles</th>
+          <th width = "100">Number of circles</th>
+          <th width = "100">Number of paths</th>
+          <th width = "100">Number of groups</th>
+        </tr>
+      </thead>
+      <tbody id = "imgList" class = "scroll" style = "display: block" >
+        <tr>
+          <td><a href="svgFiles/quad01.svg" download><img class = "resize" src="svgFiles/quad01.svg"></img></a></td>
+          <td><a href="svgFiles/quad01.svg" download>quad01.svg</a></td>
+          <td>1KB</td>
+          <td><center>1</center></td>
+          <td><center>5</center></td>
+          <td><center>2</center></td>
+          <td><center>3</center></td>
+        </tr>
+        <tr>
+          <td><a href="svgFiles/vest.svg" download = "vest.svg"><img class = "resize" src="svgFiles/vest.svg" height = "200"></img></a></td>
+          <td><a href="svgFiles/vest.svg" download = "vest.svg">vest.svg</a></td>
+          <td>2KB</td>
+          <td><center>3</center></td>
+          <td><center>5</center></td>
+          <td><center>1</center></td>
+          <td><center>8</center></td>
+        </tr>
+
+        <tr>
+          <td><a href="svgFiles/hen_and_chicks.svg" download = "hen_and_chicks.svg"><img class = "resize" src="svgFiles/hen_and_chicks.svg"></img></a></td>
+          <td><a href="svgFiles/hen_and_chicks.svg" download = "hen_and_chicks.svg">hen_and_chicks.svg</a></td>
+          <td>5KB</td>
+          <td><center>3</center></td>
+          <td><center>1</center></td>
+          <td><center>4</center></td>
+          <td><center>3</center></td>
+        </tr>
+        <tr>
+          <td><a href="svgFiles/quad01.svg" download = "quad01.svg"><img class = "resize" src="svgFiles/quad01.svg"></img></a></td>
+          <td><a href="svgFiles/quad01.svg" download = "quad01_d.svg">quad01.svg</a></td>
+          <td>1KB</td>
+          <td><center>1</center></td>
+          <td><center>5</center></td>
+          <td><center>2</center></td>
+          <td><center>3</center></td>
+        </tr>
+        <tr>
+          <td><a href="svgFiles/vest.svg" download = "vest.svg"><img class = "resize" src="svgFiles/vest.svg" height = "200"></img></a></td>
+          <td><a href="svgFiles/vest.svg" download = "vest.svg">vest.svg</a></td>
+          <td>2KB</td>
+          <td><center>3</center></td>
+          <td><center>5</center></td>
+          <td><center>1</center></td>
+          <td><center>8</center></td>
+        </tr>
+
+        <tr>
+          <td><a href="svgFiles/hen_and_chicks.svg" download = "hen_and_chicks.svg"><img class = "resize" src="svgFiles/hen_and_chicks.svg"></img></a></td>
+          <td><a href="svgFiles/hen_and_chicks.svg" download = "hen_and_chicks.svg">hen_and_chicks.svg</a></td>
+          <td>5KB</td>
+          <td><center>3</center></td>
+          <td><center>1</center></td>
+          <td><center>4</center></td>
+          <td><center>3</center></td>
+        </tr>
+        <tr>
+          <td><a href="svgFiles/quad01.svg" download = "quad01.svg"><img class = "resize" src="svgFiles/quad01.svg"></img></a></td>
+          <td><a href="svgFiles/quad01.svg" download = "quad01_d.svg">quad01.svg</a></td>
+          <td>1KB</td>
+          <td><center>1</center></td>
+          <td><center>5</center></td>
+          <td><center>2</center></td>
+          <td><center>3</center></td>
+        </tr>
+        <tr>
+          <td><a href="svgFiles/vest.svg" download = "vest.svg"><img class = "resize" src="svgFiles/vest.svg" height = "200"></img></a></td>
+          <td><a href="svgFiles/vest.svg" download = "vest.svg">vest.svg</a></td>
+          <td>2KB</td>
+          <td><center>3</center></td>
+          <td><center>5</center></td>
+          <td><center>1</center></td>
+          <td><center>8</center></td>
+        </tr>
+
+        <tr>
+          <td><a href="svgFiles/hen_and_chicks.svg" download = "hen_and_chicks.svg"><img class = "resize" src="svgFiles/hen_and_chicks.svg"></img></a></td>
+          <td><a href="svgFiles/hen_and_chicks.svg" download = "hen_and_chicks.svg">hen_and_chicks.svg</a></td>
+          <td>5KB</td>
+          <td><center>3</center></td>
+          <td><center>1</center></td>
+          <td><center>4</center></td>
+          <td><center>3</center></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      <form ref='submit' id='submit'>
+      <div class="submitsection">
+        <input type="file" name="pic" id="image" accept=".svg"></input>
+      </div>
+      <div class="submitsection">
+        <input type='submit' id = "filesubmit"></input>
+      </div>
+    </form>
+    </p>
+  </div>
+
+  <div>
+    <p><center>SVG View Panel</center></p>
+    <form ref='filechoose' id='filechoose'  method = 'get' action = 'filelog/'>
+      <div class="file">
+        <label for="filename">Choose a file: </label>
+        <select id="filename">
+          <option value="quad01.svg">quad01</option>
+          <option value="vest.svg">Vest</option>
+          <option value="hen_and_chicks.svg">hen_and_chicks</option>
+        </select>
+        <p id = "p01"></p>
+      </div>
+    </form>
+    <table width = "1000">
+      <thead id = "h01">
+        <tr>
+          <th colspan="6"><center><img id = "img" class = "bigsize" src = "svgFiles/quad01.svg"></img></center></th>
+        </tr>
+      </thead>
+      <tbody id = "t01" class = "svg" style = "display:block">
+        <tr>
+          <td colspan="3" id = "t"><center>Title</center></td>
+          <td colspan="3" id = "d"><center>Description</center></td>
+        </tr>
+      </tbody>
+      <tbody class="svg" style = "display:block">
+        <tr>
+          <td id = "title">Example quad01 - quadratic Bezier commands in path data</td>
+          <td id = "description">Picture showing a "Q" a "T" command, along with annotations showing the control points and end points</td>
+        </tr>
+      </tbody>
+      <tbody id = "t01" class = "svg" style = "display:block">
+        <tr>
+          <td colspan="2"><center>Component</center></td>
+          <td colspan="2"><center>Summary</center></td>
+          <td colspan="2"><center>Other Attributes</center></td>
+        </tr>
+      </tbody>
+      <tbody id = "t02" class="svg"></tbody>
+    </table>
+    <p>
+      <center>
+        <form ref='showAttr' id='showAttr'>
+          <img class = "smallsize" src = "show.png"></img>
+          <select id="attribute"></select>
+        </form>
+
+
+      </center>
+
+    </p>
+  </div>
+  <div>
+    <p><center>Additional Panel</center></p>
+  </div>
+
+  <hr>
+    <div id="information">Information Section</div>
+  <hr>
+  <form ref='submit' id='submit'>
+  <div class="submitsection">
+    <label for="entryBox">Enter attribute name: </label>
+    <input type="name" class="submitsection" id="entryBox" value="Name" placeholder="Placeholder">
+  </div>
+  <div class="submitsection">
+    <input type='submit' class="btn btn-secondary">
+  </div>
+</form>
+<!-- Leave me at the bottom of body -->
+<script src="index.js"></script>
+</body>
+</html>

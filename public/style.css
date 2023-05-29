@@ -1,0 +1,141 @@
+html {
+    width: 60%;
+    height: 100%;
+    min-height: 100%;
+    margin: 0 auto;
+    font-size: 16px;
+    background-color: #FFFFFF;
+}
+body {
+    height: 100%;
+    min-height: 100%;
+    line-height: 1.75;
+    background-color: #FFFFFF;
+}
+a:link:hover {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    text-decoration: underline;
+    cursor: pointer;
+    cursor: hand;
+}
+input[type=submit], button {
+    cursor: pointer;
+    cursor: hand;
+}
+@media(max-width: 900px) {
+    html {
+        font-size: 14px !important;
+        width: 80% !important;
+    }
+}
+@media(max-width: 480px) {
+    html {
+        font-size: 12px !important;
+        width: 90% !important;
+    }
+}
+@media(max-width: 320px) {
+    html {
+        font-size: 12px !important;
+        width: 100% !important;
+    }
+}
+
+img.resize {
+  display: block;
+  max-width:200px;
+  max-height:200px;
+  width: auto;
+  height: auto;
+}
+img.smallsize {
+  width:20%;
+  height:5%;
+}
+
+img.bigsize {
+  display: block;
+  max-width:800px;
+  width: auto;
+  height: auto;
+}
+
+table {
+  border : 1px solid black;
+  width: 1000;
+  margin: auto;
+
+}
+
+table,th,td {
+  text-align:center;
+}
+
+th, td {
+  border : 1px solid black;
+  margin: auto;
+}
+th {
+  color: blue;
+  margin: auto;
+
+}
+td {
+  color: black;
+  height: 100px;
+  overflow-y: auto;
+
+}
+
+h1 {
+  font-size: 60;
+  background-color: pink;
+  color: white;
+}
+h2{
+  font-family: verdana;
+}
+
+ul{
+    list-style-type: square;
+    color :black;
+}
+
+
+
+tbody.scroll {
+  height:500px;
+  overflow-y:scroll;
+}
+
+.scroll td{
+  width: 100px;
+  height: auto;
+}
+
+thead#h01 {
+  width: 1000px;
+}
+
+tbody#t02{
+  display: block;
+  height: 262px;
+  overflow: auto;
+  width: 100%;
+
+}
+
+.svg td {
+  width: 500px;
+  height: auto;
+}
+
+tbody#t01 {
+  font-weight: bold;
+}
+
+button#b01 {
+  align:right;
+}
