@@ -1,8 +1,6 @@
-# CIS*2750 Assignment 3 - Stub
+# Web Application Project
 
-For this assignment, and web development in general you will need to exercise your "google-fu", your skill in using a search engine to find answers to problems.
-
-You do not need to do much backend coding at all for Module 1. app.js should just contain hard coded response values.
+Utilized C, XML and JavaScript to design web-based graphical user interface for simple image database displaying SVG images, granting users ability to manipulate images
 
 ## Installation of Node App
 
@@ -46,7 +44,7 @@ upload/
 # This is the directory where you put all your C parser code
 parser/
 ```
-You will need to add functionality to app.js, index.html, index.js and, if you wish, style.css.
+Added functionality to app.js, index.html, index.js
 
 
 ## Components
@@ -63,158 +61,6 @@ You will need to add functionality to app.js, index.html, index.js and, if you w
 
 https://developer.mozilla.org/en-US/docs/Tools
 
-#### HTML
-
-```HTML
-# Doctype of the file, this doctype specifies HTML5
-<!DOCTYPE html>
-
-# Language English, useful for Accessibility 
-<html lang="en">
-# The head contains metadata and script loading
-<head>
-# Here is some metadata about the file, you can change those values to match your own
-    <title>CHANGE ME</title>
-    <meta name="description" content="CHANGE ME">
-    <meta name="keywords" content="CHANGE ME">
-    <meta name="author" content="CHANGE ME">
-    <meta charset="utf-8">
-
-# This is useful for viewing on non-standard screens
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-# Here we are using a Content-Distribution-Network (CDN) to get quick loading
-# bootstrap, jQuery libraries. Note you need internet access to load these
-# (assuming they're not cached)
-    <!-- Load jquery, bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-# Here we're loading our custom Style
-    <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="/style.css">
-    <!-- Custom CSS End -->
-</head>
-# The body contains all of our elements, divs, tables, forms...
-<body>
-# A link for verifying that file download functionaity works
-    <h3>Download test</h3>
-    If testCalSimpleUTC.ics exists in the uploads/ directory on the server, then clicking on the link below will download it from the server.<br>
-	<a href="/uploads/testCalSimpleUTC.ics">testCalSimpleUTC.ics</a>
-	<hr>
-
-
-    <!-- Leave me at the bottom of body -->
-    <script src="/index.js"></script>
-</body>
-</html>
-```
-
-#### CSS
-
-Bootstrap 4 style guide (example, forms): https://getbootstrap.com/docs/4.0/components/forms/
-
-```CSS
-/* I've added Style to align our content in the center of the page */
-html {
-    width: 60%;
-    height: 100%;
-    min-height: 100%;
-    margin: 0 auto;
-    font-size: 16px;
-    background-color: #FFFFFF;
-}
-body {
-    height: 100%;
-    min-height: 100%;
-    line-height: 1.75;
-    background-color: #FFFFFF;
-}
-
-a:link:hover {
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-    text-decoration: underline;
-    cursor: pointer;
-    cursor: hand;
-}
-input[type=submit], button {
-    cursor: pointer;
-    cursor: hand;
-}
-
-/*
- * These are media queries, resizing the page for small devices
- * https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
- * When changing font-size use "rem" units, relative to root font-size
- *   font-size: 1.5rem is 1.5X the root element (html) font-size
- *   16 * 1.5 = 24
- * When you resize your browser you'll notice everything gets smaller
- */
-@media(max-width: 900px) {
-    html {
-        font-size: 14px !important;
-        width: 80% !important;
-    }
-}
-@media(max-width: 480px) {
-    html {
-        font-size: 12px !important;
-        width: 90% !important;
-    }
-}
-@media(max-width: 320px) {
-    html {
-        font-size: 12px !important;
-        width: 100% !important;
-    }
-}
-```
-
-#### Browser JavaScript
-
-How to $.ajax: https://stackoverflow.com/a/22964077/5698848
-
-```JavaScript
-// We're using jQuery library
-// document.ready just means this JS runs when the document element (body) is loaded
-// Put all onload AJAX calls here, and event listeners
-$(document).ready(function() {
-
-// This is an Asynchronous JavaScript Request (AJAX) using jQuery
-// We can use this to query our API endpoints
-    // On page-load AJAX Example
-    $.ajax({
-        type: 'get',            //Request type
-        dataType: 'json',       //Data type - we will use JSON for almost everything 
-        url: '/someendpoint',   //The server endpoint we are connecting to
-        success: function (data) {
-            /*  Do something with returned object
-            Note that what we get is an object, not a string, 
-            so we do not need to parse it on the server.
-            JavaScript really does handle JSONs seamlessly
-            */
-            $('#blah').html("On page load, Received string '"+JSON.stringify(data)+"' from server");
-            //We write the object to the console to show that the request was successful
-            console.log(data);  
-        },
-        fail: function(error) {
-            // Non-200 return, do something with error
-            console.log(error); 
-        }
-    });
-// When you "submit" an HTML form, the default action is to redirect to another page
-// This overrides it and allows us to make an AJAX request and edit data on the page
-    $('#someform').submit(function(e){
-        //Dumy output, to show that the form callback is working
-        $('#blah').html("Callback from the form");
-        e.preventDefault();
-        $.ajax({});
-    });
-});
 ```
 
 ### HTTP Web Server
